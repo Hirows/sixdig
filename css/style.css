@@ -1,0 +1,109 @@
+/*------Geral------*/
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    text-align: center;
+}
+
+/* ------Body------*/
+.layout{
+    display: grid;
+    min-height: 90vh;
+    align-content: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows:  minmax(80px, auto) repeat(3, 60px);
+    margin-top: -2rem;
+}
+
+h1{
+    font-size: 3em;
+    font-family: sans-serif;
+    color: rgb(233, 233, 233);
+}
+
+/* ------botão de refresh------*/
+.refresh{
+    text-decoration: none;
+    background-color: rgb(255, 0, 111);
+    color: rgb(233, 233, 233);
+    font-size: 2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0.2rem 0.8rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgb(187, 0, 81);
+    margin: auto;
+    margin-top: 1em;
+    transition: 0.2s;
+}
+.refresh:hover{
+    padding: 0.4rem 1rem;
+}
+
+
+/* ------Css dos numeros no centro------*/
+#conta{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3rem;
+    display: inline-block;
+}
+
+/* ------Span rosa------*/
+.rosa{
+    color: rgb(255, 0, 111);
+}
+
+/* ------Navbar------*/
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    list-style: none;
+}
+
+.links li{
+    padding: 2vh;
+    padding-right: 2vw;
+}
+
+.links li a{
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5rem;
+    transition: 0.5s;
+}
+
+.links li a:hover{
+    color: rgb(255, 0, 111);
+}
+
+/*------Botão de mudar a cor------*/
+
+.btn{
+    text-decoration: none;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 9px;
+   margin: 2vh;
+   margin-right: 2vh;
+   padding: 1vh;
+}
+
+/*------Função de mudar------*/
+
+.claro{
+    background-color: rgb(228, 228, 228);
+    color: rgb(35, 35, 35);
+    transition:1s;
+  }
+  
+  .escuro{
+    background-color: rgb(35, 35, 35);
+    color: rgb(228, 228, 228);
+    transition:1s;
+  }
