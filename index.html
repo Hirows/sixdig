@@ -7,23 +7,27 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Gerador de 6 dígitos</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body id="corpo" class="escuro">
-    <ul>
-        <div class="links">
-            <li> <a id="link1" class="escuro" href="#">Link 1</a></li>
-            <li> <a id="link2" class="escuro" href="#">Link 2</a></li>
-            <li> <a id="link3" class="escuro" href="#">Link 3</a></li>
-            <button onclick="changea(), changeb()" id="btn" class="btn" class="claro">Claro?</button>
-        </div>
-    </ul>
+<body id="corpo" class="escuro tema">
+    <nav class="links tema escuro">
+        <li> <a class="escuro tema" href="#">Link 1</a></li>
+        <li> <a class="escuro tema" href="#">Link 2</a></li>
+        <li> <a class="escuro tema" href="#">Link 3</a></li>
+        <button onclick="changebtn()" id="btn" class="btn claro tema">Claro?</button>
+    </nav>
+
     <div class="layout">
-        <h1 class="escuro" id="layout">Gerador de <span class="rosa"> seis</span> dígitos aleatórios</h1>
+        <h1 class="escuro tema" id="layout">Gerador de <span class="rosa"> seis</span> dígitos aleatórios</h1>
         <div class="numeros">
-            <p id="conta" class="escuro"></p>
+            <p id="conta" class="escuro tema"></p>
         </div>
-        <button onclick="reload()" class="refresh">Refresh</button>
+        <div class="buttons">
+            <button onclick="reload(8)" id="botao" class="refresh">Gerar 8</button>
+            <button onclick="reload(6)" id="botao" class="refresh">Gerar 6</button>
+            <button onclick="reload(4)" id="botao" class="refresh">Gerar 4</button>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>

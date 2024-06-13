@@ -1,43 +1,25 @@
-function reload(){
-  const codigo = Math.floor(100000 + Math.random() * 900000);
-  document.getElementById("conta").innerHTML = codigo
+// function reload() {
+//   const codigo = Math.floor(100000 + Math.random() * 900000);
+//   $("#conta").text(codigo);
+// }
+
+function reload(numDigits) {
+  const min = Math.pow(10, numDigits - 1); // Calcula o mínimo (por exemplo, 1000 para 4 dígitos)
+  const max = Math.pow(10, numDigits) - 1; // Calcula o máximo (por exemplo, 9999 para 4 dígitos)
+  const codigo = Math.floor(min + Math.random() * (max - min + 1)); // Gera o número aleatório dentro do intervalo calculado
+  $("#conta").text(codigo); // Atualiza o elemento HTML com o novo código
 }
 
-function changea() {
-  var body = document.getElementById("corpo");
-  body.classList.toggle("claro");
-  body.classList.toggle("escuro");
-
-  var link1 = document.getElementById("link1");
-  link1.classList.toggle("claro");
-  link1.classList.toggle("escuro");
-
-  var link2 = document.getElementById("link2");
-  link2.classList.toggle("claro");
-  link2.classList.toggle("escuro");
-
-  var link3 = document.getElementById("link3");
-  link3.classList.toggle("claro");
-  link3.classList.toggle("escuro");
-
-  var layout = document.getElementById("layout");
-  layout.classList.toggle("claro");
-  layout.classList.toggle("escuro");
-  
-  var contas = document.getElementById("conta");
-  contas.classList.toggle("claro");
-  contas.classList.toggle("escuro");
-
-  var btn = document.getElementById("btn");
-btn.classList.toggle("claro");
-btn.classList.toggle("escuro");
-
-}
-
-function changeb(){
-  if (btn.innerHTML==="Claro?") {
+function changebtn() {
+  if (btn.innerHTML === "Claro?") {
     btn.innerHTML = "Escuro?";
   } else {
-    btn.innerHTML="Claro?"
+    btn.innerHTML = "Claro?";
   }
 }
+
+$(document).ready(function () {
+  $("#btn").click(function () {
+    $(".tema").toggleClass("claro escuro");
+  });
+});
