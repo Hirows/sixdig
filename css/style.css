@@ -10,11 +10,8 @@ body {
 
 /* ------Body------*/
 .layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 250px;
+  margin-top: 70px;
+  text-align: center;
 }
 
 h1 {
@@ -30,10 +27,13 @@ h1 {
 }
 
 .layout .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  grid-auto-rows: auto;
   gap: 20px;
+  grid-row: 100px;
+  justify-content: center;
+  place-items: center;
 }
 
 /* ------botão de refresh------*/
@@ -50,9 +50,17 @@ h1 {
   margin: auto;
   margin-top: 1em;
   transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .refresh:hover {
   padding: 0.4rem 1rem;
+}
+
+.salvar{
+  grid-column: 1 / -1;
 }
 
 /* ------Css dos numeros no centro------*/
@@ -61,6 +69,11 @@ h1 {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 3rem;
   display: inline-block;
+}
+
+.numsalvos{
+  background-color: aliceblue;
+  grid-column: 1 / -1;
 }
 
 /* ------Span rosa------*/

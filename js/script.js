@@ -1,8 +1,3 @@
-// function reload() {
-//   const codigo = Math.floor(100000 + Math.random() * 900000);
-//   $("#conta").text(codigo);
-// }
-
 function reload(numDigits) {
   const min = Math.pow(10, numDigits - 1); // Calcula o mínimo (por exemplo, 1000 para 4 dígitos)
   const max = Math.pow(10, numDigits) - 1; // Calcula o máximo (por exemplo, 9999 para 4 dígitos)
@@ -22,4 +17,32 @@ $(document).ready(function () {
   $("#btn").click(function () {
     $(".tema").toggleClass("claro escuro");
   });
+});
+
+$(document).ready(function() {
+    // Quando o botão "Adicionar" é clicado
+    $('#salvarnum').click(function() {
+        var salvarnovonum = $('#conta').val();
+
+            // Criar um novo elemento li com a nova tarefa
+            var novonum = $('<p>').text(salvarnovonum);
+            
+            // Adicionar botões para marcar como concluído e remover
+            var removerButton = $('<button>').text('Remover');
+            
+            // Adicionar classes CSS aos botões
+            removerButton.addClass('remover');
+            
+            // Anexar os botões ao elemento li
+            novonum.append(removerButton);
+            
+            // Anexar o elemento li à lista
+            $('#salvos').append(novonum);
+
+    });
+    // Quando um botão "Remover" é clicado
+    $('#salvos').on('click', '.remover', function() {
+        var tarefa = $(this).parent();
+        tarefa.remove();
+    });
 });

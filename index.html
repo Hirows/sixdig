@@ -19,16 +19,20 @@
     </nav>
 
     <div class="layout">
-        <h1 class="escuro tema" id="layout">Gerador de <span class="rosa"> seis</span> dígitos aleatórios</h1>
+        <h1 class="escuro tema" id="layout">Gerador de <span class="rosa">dígitos</span> aleatórios</h1>
         <div class="numeros">
-            <p id="conta" class="escuro tema"></p>
+            <p id="conta" class="escuro tema">Clique em algum dos botões de dígitos!</p>
         </div>
         <div class="buttons">
             <button onclick="reload(8)" id="botao" class="refresh">Gerar 8</button>
             <button onclick="reload(6)" id="botao" class="refresh">Gerar 6</button>
             <button onclick="reload(4)" id="botao" class="refresh">Gerar 4</button>
+            <button id="salvarnum" class="refresh salvar">Salvar Número</button>
+            <ul id="salvos" class="numsalvos"></ul>
         </div>
+
     </div>
+
     <script src="js/script.js"></script>
 </body>
 
