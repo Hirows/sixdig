@@ -1,8 +1,8 @@
 function reload(numDigits) {
-  const min = Math.pow(10, numDigits - 1); // Calcula o mínimo (por exemplo, 1000 para 4 dígitos)
-  const max = Math.pow(10, numDigits) - 1; // Calcula o máximo (por exemplo, 9999 para 4 dígitos)
-  const codigo = Math.floor(min + Math.random() * (max - min + 1)); // Gera o número aleatório dentro do intervalo calculado
-  $("#conta").text(codigo); // Atualiza o elemento HTML com o novo código
+  const min = Math.pow(10, numDigits - 1);
+  const max = Math.pow(10, numDigits) - 1;
+  const codigo = Math.floor(min + Math.random() * (max - min + 1));
+  $("#conta").text(codigo);
 }
 
 function changebtn() {
@@ -13,36 +13,25 @@ function changebtn() {
   }
 }
 
-$(document).ready(function () {
+ $(document).ready(function () {
   $("#btn").click(function () {
     $(".tema").toggleClass("claro escuro");
   });
 });
 
-$(document).ready(function() {
-    // Quando o botão "Adicionar" é clicado
+ $(document).ready(function() {
     $('#salvarnum').click(function() {
-        var salvarnovonum = $('#conta').val();
-
-            // Criar um novo elemento li com a nova tarefa
-            var novonum = $('<p>').text(salvarnovonum);
-            
-            // Adicionar botões para marcar como concluído e remover
-            var removerButton = $('<button>').text('Remover');
-            
-            // Adicionar classes CSS aos botões
-            removerButton.addClass('remover');
-            
-            // Anexar os botões ao elemento li
-            novonum.append(removerButton);
-            
-            // Anexar o elemento li à lista
-            $('#salvos').append(novonum);
-
+        var numeroSalvo = $('#conta').text();
+        
+        if(numeroSalvo.trim() !== '') {
+            var novoItem = $('<li>').text(numeroSalvo);
+            var removerButton = $('<button>').text('Remover').addClass('remover');
+            novoItem.append(removerButton);
+            $('#salvos').append(novoItem);
+        }
     });
-    // Quando um botão "Remover" é clicado
+    
     $('#salvos').on('click', '.remover', function() {
-        var tarefa = $(this).parent();
-        tarefa.remove();
+        $(this).parent().remove();
     });
 });
